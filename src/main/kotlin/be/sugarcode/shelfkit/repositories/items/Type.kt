@@ -9,7 +9,7 @@ class Type(
     val typeName: String,
 
     @Column(name = "is_predefined")
-    val isPredefined: Int,
+    val isPredefined: Int?,
 
     @Column(name = "item_name")
     val itemName: String,
@@ -46,5 +46,5 @@ class Type(
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    val id: Int
+    val id: Int? = null
 )
