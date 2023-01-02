@@ -7,7 +7,7 @@ import org.springframework.http.HttpStatus
 import org.springframework.web.bind.annotation.*
 
 @RestController
-@RequestMapping("/item")
+@RequestMapping("/items")
 class ItemController(val itemService: ItemService) {
     @GetMapping("/{id}")
     fun getAllItemsByUser(@PathVariable id: Int, @RequestParam(required = false) types: Array<String>?): List<ItemDTO> {

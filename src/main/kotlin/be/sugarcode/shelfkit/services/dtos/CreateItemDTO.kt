@@ -1,6 +1,7 @@
 package be.sugarcode.shelfkit.services.dtos
 
 class CreateItemDTO(
+
     val typeId: Int,
 
     val userId: Int,

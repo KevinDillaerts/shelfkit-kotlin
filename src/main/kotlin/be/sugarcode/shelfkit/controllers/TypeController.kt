@@ -7,7 +7,7 @@ import org.springframework.http.HttpStatus
 import org.springframework.web.bind.annotation.*
 
 @RestController
-@RequestMapping("/type")
+@RequestMapping("/types")
 class TypeController(val typeService: TypeService) {
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)

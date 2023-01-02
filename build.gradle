@@ -27,6 +27,8 @@ dependencies {
     runtimeOnly 'com.h2database:h2'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testImplementation group: 'io.rest-assured', name: 'kotlin-extensions', version: '4.3.0'
+    implementation 'org.springframework.boot:spring-boot-starter-webflux:3.0.1'
+
 }
 
 tasks.withType(KotlinCompile) {

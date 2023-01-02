@@ -32,7 +32,7 @@ class ItemControllerTest() {
             contentType(MediaType.APPLICATION_JSON_VALUE)
             body(testUser)
         } When {
-            post("/user")
+            post("/users")
         } Then {
             statusCode(HttpStatus.SC_CREATED)
             log().all()
@@ -48,7 +48,7 @@ class ItemControllerTest() {
             contentType(MediaType.APPLICATION_JSON_VALUE)
             body(testType)
         } When {
-            post("/type")
+            post("/types")
         } Then {
             statusCode(HttpStatus.SC_CREATED)
             log().all()
@@ -69,7 +69,7 @@ class ItemControllerTest() {
             contentType(MediaType.APPLICATION_JSON_VALUE)
             body(testItem)
         } When {
-            post("/item")
+            post("/items")
         } Then {
             statusCode(HttpStatus.SC_CREATED)
             log().all()

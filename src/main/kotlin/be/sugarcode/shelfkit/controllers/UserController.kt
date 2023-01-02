@@ -7,7 +7,7 @@ import org.springframework.http.MediaType
 import org.springframework.web.bind.annotation.*
 
 @RestController
-@RequestMapping("/user")
+@RequestMapping("/users")
 class UserController(val userService: UserService) {
     @GetMapping
     fun getAllUsers(): List<User> {

@@ -32,7 +32,7 @@ class UserControllerTest {
                 contentType(MediaType.APPLICATION_JSON_VALUE)
                 body(testUser)
             } When {
-                post("/user")
+                post("/users")
             } Then {
                 statusCode(HttpStatus.SC_CREATED)
                 log().all()
