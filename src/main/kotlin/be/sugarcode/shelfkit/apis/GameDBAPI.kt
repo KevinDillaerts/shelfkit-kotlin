@@ -1,5 +1,6 @@
 package be.sugarcode.shelfkit.apis
 
+import be.sugarcode.shelfkit.exceptions.KeyNotFoundException
 import be.sugarcode.shelfkit.repositories.apis.GameAPIKeys
 import be.sugarcode.shelfkit.repositories.apis.GameAPIRepository
 import com.api.igdb.apicalypse.APICalypse
@@ -23,8 +24,7 @@ class GameDBAPI(
     var dotenv: Dotenv = dotenv()
 
     fun findGamesBySearchTerm(searchTerm: String): String {
-        //TODO: add exception to throw statement
-        val apiInfo: GameAPIKeys = gameApiRepository.findById("igdb").orElseThrow()
+        val apiInfo: GameAPIKeys = gameApiRepository.findById("igdb").orElseThrow { KeyNotFoundException() }
         var token = apiInfo.accessToken
         if (ChronoUnit.SECONDS.between(apiInfo.updatedAt, LocalDateTime.now()) > apiInfo.expiresIn) {
             token = updateGameAPIToken(apiInfo)

@@ -1,6 +1,7 @@
 package be.sugarcode.shelfkit.controllers
 
 import be.sugarcode.shelfkit.exceptions.ErrorMessageModel
+import be.sugarcode.shelfkit.exceptions.KeyNotFoundException
 import be.sugarcode.shelfkit.exceptions.TypeNotFoundException
 import be.sugarcode.shelfkit.exceptions.UserNotFoundException
 import org.springframework.http.HttpStatus
@@ -11,7 +12,7 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExcep
 
 @ControllerAdvice
 class ExceptionHandlerController : ResponseEntityExceptionHandler() {
-    @ExceptionHandler(value = [UserNotFoundException::class, TypeNotFoundException::class])
+    @ExceptionHandler(value = [UserNotFoundException::class, TypeNotFoundException::class, KeyNotFoundException::class])
     fun handleArticleNotFoundException(ex: RuntimeException): ResponseEntity<ErrorMessageModel> {
 
         val errorMessage = ErrorMessageModel(
